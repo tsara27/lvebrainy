@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Livebrainy
+    == stylesheet_link_tag    'admin/styles', media: 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true 
+    == csrf_meta_tags 
+
+  body
+    = render partial: "layouts/admin/navigation"
+	.container-fluid
+      .row
+	    = render partial: "layouts/admin/sidebar"
+	    = render partial: "layouts/admin/content"
+        
+
+
+
+
+  
