@@ -3,10 +3,82 @@
 	{
 		"selected_items":
 		[
+			[
+				"st",
+				"status"
+			],
+			[
+				"te",
+				"text_field"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 1386,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/admin/tutorials_controller.rb",
+			"settings":
+			{
+				"buffer_size": 645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/admin/tags_controller.rb",
+			"settings":
+			{
+				"buffer_size": 302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/admin.js",
+			"settings":
+			{
+				"buffer_size": 832,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/admin_layout.slim",
+			"settings":
+			{
+				"buffer_size": 467,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1884,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/admin/tutorials/_list.slim",
+			"settings":
+			{
+				"buffer_size": 426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/admin/generate_table.js",
+			"settings":
+			{
+				"buffer_size": 827,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -36,11 +108,47 @@
 	},
 	"file_history":
 	[
+		"/Workzone/Charity/livebrainy/app/views/admin/tutorials/_form.slim",
+		"/Workzone/Charity/livebrainy/app/views/admin/tutorials/index.slim",
+		"/Workzone/Charity/livebrainy/app/assets/stylesheets/admin/styles.css",
+		"/Workzone/Charity/livebrainy/app/models/article.rb",
+		"/Workzone/Charity/livebrainy/config/routes.rb",
+		"/Workzone/Charity/livebrainy/app/assets/javascripts/admin/jscript.js",
+		"/Workzone/Charity/livebrainy/config/environments/development.rb",
+		"/Workzone/Charity/livebrainy/app/views/layouts/admin_layout.slim",
+		"/Workzone/Charity/livebrainy/app/assets/javascripts/admin.js",
+		"/Workzone/Charity/livebrainy/app/assets/javascripts/application.js",
+		"/Workzone/Charity/livebrainy/app/assets/stylesheets/application.css",
+		"/Workzone/Charity/livebrainy/app/models/tag.rb",
+		"/Workzone/Charity/livebrainy/app/assets/stylesheets/admin/magicsuggest-min.css",
+		"/Workzone/Charity/livebrainy/app/helpers/admin/tutorials_helper.rb",
+		"/Workzone/Charity/livebrainy/app/controllers/admin/tutorials_controller.rb",
+		"/Workzone/Charity/livebrainy/app/assets/javascripts/admin/tutorials.js",
+		"/Workzone/Charity/livebrainy/config/initializers/assets.rb",
+		"/Workzone/Charity/livebrainy/db/schema.rb",
+		"/Workzone/Charity/livebrainy/db/migrate/20140617032227_create_tags.rb",
+		"/Workzone/Charity/livebrainy/db/migrate/20140617032215_create_articles.rb",
+		"/Workzone/Charity/livebrainy/config/initializers/simple_form_bootstrap.rb",
+		"/Workzone/Charity/livebrainy/config/initializers/simple_form.rb",
+		"/Workzone/Charity/livebrainy/app/views/layouts/admin/_sidebar.slim",
+		"/Workzone/Charity/livebrainy/app/views/layouts/admin/_navigation.slim",
+		"/Workzone/Charity/livebrainy/app/assets/stylesheets/additional.sass",
+		"/Workzone/Charity/livebrainy/app/views/layouts/public/_content.slim",
+		"/Workzone/Charity/livebrainy/app/views/layouts/public/_navigation.slim",
+		"/Workzone/Charity/livebrainy/db/migrate/20140617033353_create_articles_tags.rb",
+		"/Workzone/Charity/livebrainy/db/migrate/20140617032424_create_quotes.rb",
+		"/Users/tsara27/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Workzone/Charity/livebrainy/app/views/layouts/application.slim",
+		"/Workzone/Charity/livebrainy/config/database.yml",
+		"/Workzone/Charity/livebrainy/app/views/layouts/admin/_content.slim",
+		"/Workzone/Charity/livebrainy/app/views/admin/dashboard/index.slim",
+		"/Workzone/Charity/livebrainy/app/assets/stylesheets/admin/bootstrap.min.css",
+		"/Workzone/Charity/livebrainy/app/assets/stylesheets/admin/dashboard.css",
 		"/Workzone/rBox/sewa_properti/app/controllers/application_controller.rb"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -54,13 +162,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"t",
+			"collection",
+			"div style=\"padding: 5px; overflow:hidden;\">' +\n                '<div style=\"float: left;\"><img src=\"' + data.picture + '\" /></div>' +\n                '<div style=\"float: left; margin-left: 5px\">' +\n                    '<div style=\"font-weight: bold; color: #333; font-size: 10px; line-height: 11px\">' + data.name + '</div>' +\n                    '<div style=\"color: #999; font-size: 9px\">' + data.email + '</div>' +\n                '</div>' +\n            '</div><div style=\"clear:both;\"></div>'",
+			"  .",
+			"tags",
+			"/.\n",
+			"class",
+			"      =",
+			" \n",
+			"control-group",
+			"Helve",
+			"\"Bebas\"",
+			"sans-serif"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"form-group",
+			"\"Lato\"",
+			"\"Bebas\""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -71,8 +195,234 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 1386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								439,
+								439
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/admin/tutorials_controller.rb",
+					"settings":
+					{
+						"buffer_size": 645,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								528,
+								528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/admin/tags_controller.rb",
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								174,
+								292
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/javascripts/admin.js",
+					"settings":
+					{
+						"buffer_size": 832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								812,
+								812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/layouts/admin_layout.slim",
+					"settings":
+					{
+						"buffer_size": 467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby Slim/Syntaxes/Ruby Slim.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 1884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								455,
+								455
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "app/views/admin/tutorials/_list.slim",
+					"settings":
+					{
+						"buffer_size": 426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								374,
+								374
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby Slim/Syntaxes/Ruby Slim.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/assets/javascripts/admin/generate_table.js",
+					"settings":
+					{
+						"buffer_size": 827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -82,7 +432,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -93,11 +443,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -109,7 +466,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -117,6 +474,30 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"art",
+				"app/models/article.rb"
+			],
+			[
+				"_fo",
+				"app/views/admin/tutorials/_form.slim"
+			],
+			[
+				"tag",
+				"app/models/tag.rb"
+			],
+			[
+				"tuto",
+				"app/controllers/admin/tutorials_controller.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			]
 		],
 		"width": 0.0
 	},
@@ -132,6 +513,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 255.0,
 	"status_bar_visible": true
 }

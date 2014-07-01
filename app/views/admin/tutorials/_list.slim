@@ -1,0 +1,18 @@
+h2.sub-header List of Tutorials
+.table-responsive
+  table.table.table-striped ng-table="tableParams"
+    thead
+      tr
+        th Title
+        th Content
+        th Tags
+        th Status
+    
+    tbody
+      tr ng-repeat="tutorial in $data"
+        td data-title="'Title'" {{ tutorial.title }}
+        td data-title="'Content'" {{ tutorial.content }}
+        td data-title="'Tags'" {{ tutorial.tags }}
+        td data-title="'Status'" {{ tutorial.status }}
+
+= javascript_include_tag "admin/generate_table"

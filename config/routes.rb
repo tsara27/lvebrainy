@@ -10,7 +10,17 @@ Rails.application.routes.draw do
 
   scope module: 'admin' do
     resources :dashboard
-    resources :tutorials
+    resources :tutorials do
+      collection do
+        get :list
+      end
+    end
+    
+    resources :tags do
+      collection do
+        get :list
+      end
+    end
   end
 
   # Example of regular route:

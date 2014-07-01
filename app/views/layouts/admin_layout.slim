@@ -3,12 +3,12 @@ html
   head
     title Livebrainy
     == stylesheet_link_tag    'admin/styles', media: 'all', 'data-turbolinks-track' => true
-    == javascript_include_tag 'application', 'data-turbolinks-track' => true 
+    == javascript_include_tag 'admin', 'data-turbolinks-track' => true 
     == csrf_meta_tags 
 
-  body
+  body ng-app="main"
     = render partial: "layouts/admin/navigation"
-	.container-fluid
+	.container-fluid ng-controller="DemoCtrl"
       .row
 	    = render partial: "layouts/admin/sidebar"
 	    = render partial: "layouts/admin/content"

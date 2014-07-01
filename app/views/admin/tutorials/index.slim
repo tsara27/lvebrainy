@@ -1,0 +1,16 @@
+h1.page-header Tutorials
+
+- if flash[:notice]
+  .alert.alert-success = flash[:notice] 
+
+- if @tutorial.errors.any?
+  .alert.alert-danger
+    = "#{pluralize(@tutorial.errors.count, "error")}"
+
+    ul
+      - @tutorial.errors.full_messages.each do |err|
+        li = err
+       
+
+= render "form"
+= render "list"

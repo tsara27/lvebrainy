@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( admin/* )
+Rails.application.config.assets.precompile += %w( admin* )
