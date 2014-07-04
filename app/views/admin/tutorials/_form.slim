@@ -1,5 +1,5 @@
 .row.well
-  = form_for @tutorial, url: {action: "create"}, html: {class: "form-horizontal", role: "form"} do |f|
+  = form_for @tutorial, url: params[:action] == "index" || params[:action] == "create" ? tutorials_path : tutorial_path(@tutorial), html: {class: "form-horizontal", role: "form"} do |f|
     .form-group
       = f.label :title, class: "col-sm-2 control-label"
       .col-sm-10
@@ -13,7 +13,7 @@
         = tag_field.label :tag_name, "Tags", class: "col-sm-2 control-label"
         .col-sm-10
           = tag_field.text_field :tag_name, class: "form-control", title: "Tooltip on top", placeholder: "ruby, rails, tutorial"
-        
+        = f.hidden_field :type, :value => 1
         = f.hidden_field :hid_tags, id: "hid_tags", :value => @tutorial.get_tags[0..-3]
         = f.hidden_field :status, id: "status", :value => 0
     .form-group

@@ -7,6 +7,7 @@ h2.sub-header List of Tutorials
         th Content
         th Tags
         th Status
+        th colspan="2" Action
     
     tbody
       tr ng-repeat="tutorial in $data"
@@ -14,5 +15,8 @@ h2.sub-header List of Tutorials
         td data-title="'Content'" {{ tutorial.content }}
         td data-title="'Tags'" {{ tutorial.tags }}
         td data-title="'Status'" {{ tutorial.status }}
+        td data-title="'Id'": a href="/tutorials/{{ tutorial.id }}/edit" Edit
+        td = link_to 'Destroy', URI.unescape(tutorial_path("{{ tutorial.id }}")), method: :delete, data: { confirm: 'Are you sure?' }
 
-= javascript_include_tag "admin/generate_table"
+
+    = javascript_include_tag "admin/generate_table"
