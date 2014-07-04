@@ -37,7 +37,7 @@ class Admin::TutorialsController < ApplicationController
 
 private
   def tuts_params 
-    params.require(:article).permit(:title, :content, :status)
+    params.require(:article).permit(:title, :content, :status, :type)
   end
 
   def load_tutorial
