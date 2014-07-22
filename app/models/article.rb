@@ -17,6 +17,9 @@ class Article < ActiveRecord::Base
 		(self.status == 1) ? "Draft" : "Posted" 
 	end
 
+	def parse_type
+		self.article_type.nil? ? nil : ARTICLE_TYPES.find {|x| x[:id] == self.article_type }[:type]	end
+
 	def get_tags
 		self.tags.map(&:tag_name).join(", ")
 	end
