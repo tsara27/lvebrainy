@@ -32,7 +32,7 @@ class Admin::TutorialsController < ApplicationController
   end
 
   def list
-    @tutorial = Article.includes(:tags)
+    @tutorial = Article.includes(:tags).where("article_type = ?", "1")
     respond_to do |format|
       format.html
       format.json { render json: @tutorial.collect {|t| { :title => t.title, :content => t.content.truncate(20), :tags => t.get_tags, :status => t.parse_status, :id => t.id }} }
