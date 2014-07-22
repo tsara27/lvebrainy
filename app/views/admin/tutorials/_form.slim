@@ -1,5 +1,5 @@
 .row.well
-  = form_for @tutorial, url: params[:action] == "index" || params[:action] == "create" ? tutorials_path : tutorial_path(@tutorial), html: {class: "form-horizontal", role: "form"} do |f|
+  = form_for @tutorial, url: params[:action] == "index" || params[:action] == "create" ? admin_tutorials_path : admin_tutorial_path(@tutorial), html: {class: "form-horizontal", role: "form"} do |f|
     .form-group
       = f.label :title, class: "col-sm-2 control-label"
       .col-sm-10

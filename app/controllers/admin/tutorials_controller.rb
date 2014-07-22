@@ -13,7 +13,7 @@ class Admin::TutorialsController < ApplicationController
   def create
     @tutorial = Article.new(tuts_params)
     @tutorial.adding_tags(params[:tags][:tag_name], "0") if params[:tags] && params[:tags][:tag_name]
-    @tutorial.save ? (redirect_to tutorials_path, :notice => "Tutorial was successfully saved.") : (render :index)
+    @tutorial.save ? (redirect_to admin_tutorials_path, :notice => "Tutorial was successfully saved.") : (render :index)
   end
 
   def edit
@@ -23,12 +23,12 @@ class Admin::TutorialsController < ApplicationController
 
   def update
     params[:tags] && params[:tags][:tag_name] ? @tutorial.adding_tags(params[:tags][:tag_name], "1") : @tutorial.adding_tags(nil, "1")
-    @tutorial.update_attributes(tuts_params) ? (redirect_to tutorials_path, notice: 'Tutorial was successfully updated.') : (render :index)
+    @tutorial.update_attributes(tuts_params) ? (redirect_to admin_tutorials_path, notice: 'Tutorial was successfully updated.') : (render :index)
   end
 
   def destroy
     @tutorial.destroy
-    redirect_to tutorials_path, :notice => "Tutorial was successfully removed."
+    redirect_to admin_tutorials_path, :notice => "Tutorial was successfully removed."
   end
 
   def list

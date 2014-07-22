@@ -15,7 +15,7 @@ $(document).ready(function () {
     allowFreeEntries: true,
     useCommaKey: true,
     method: 'get',
-    data: '/tags/list.json'
+    data: '/admin/tags/list.json'
   });
   $('#summernote').summernote({
   	height: 300,   //set editable area's height
@@ -35,7 +35,7 @@ $(document).ready(function () {
 });
 
  var app = angular.module('main', ['ngTable']).controller('TableAngular', function($scope, $http, ngTableParams) {
-  $http.get('/tutorials/list.json').success(function (data) {
+  $http.get('/admin/tutorials/list.json').success(function (data) {
   $scope.data = data;
   $scope.tableParams = new ngTableParams({
     page: 1,            // show first page

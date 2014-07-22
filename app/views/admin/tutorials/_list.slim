@@ -15,6 +15,6 @@ h2.sub-header List of Tutorials
         td data-title="'Content'" {{ tutorial.content }}
         td data-title="'Tags'" {{ tutorial.tags }}
         td data-title="'Status'" {{ tutorial.status }}
-        td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, URI.unescape(edit_tutorial_path("{{ tutorial.id }}"))
-        td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, URI.unescape(tutorial_path("{{ tutorial.id }}")), method: :delete, data: { confirm: 'Are you sure?' }
-        td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, URI.unescape(tutorial_path("{{ tutorial.id }}"))
+        td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, URI.unescape(edit_admin_tutorial_path("{{ tutorial.id }}"))
+        td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, URI.unescape(admin_tutorial_path("{{ tutorial.id }}")), method: :delete, data: { confirm: 'Are you sure?' }
+        td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, URI.unescape(admin_tutorial_path("{{ tutorial.id }}"))
