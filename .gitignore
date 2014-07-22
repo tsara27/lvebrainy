@@ -15,4 +15,6 @@
 /log/*.log
 /tmp
 /db/schema.rb
-/*DS_Store
+/*.DS_Store
+/lvebrainy.sublime-workspace
+/lvebrainy.sublime-workspace
