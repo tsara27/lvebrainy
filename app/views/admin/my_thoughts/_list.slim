@@ -1,0 +1,20 @@
+h2.sub-header List of My Thoughts
+.table-responsive
+  table.table.table-striped ng-table="tableParams"
+    thead
+      tr
+        th Title
+        th Content
+        th Tags
+        th Status
+        th colspan="3" Action
+    
+    tbody
+      tr ng-repeat="my_thought in $data"
+        td data-title="'Title'" {{ my_thought.title }}
+        td data-title="'Content'" {{ my_thought.content }}
+        td data-title="'Tags'" {{ my_thought.tags }}
+        td data-title="'Status'" {{ my_thought.status }}
+        td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, URI.unescape(edit_admin_my_thought_path("{{ my_thought.id }}"))
+        td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, URI.unescape(admin_my_thought_path("{{ my_thought.id }}")), method: :delete, data: { confirm: 'Are you sure?' }
+        td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, URI.unescape(admin_my_thought_path("{{ my_thought.id }}"))

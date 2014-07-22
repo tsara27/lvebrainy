@@ -1,0 +1,16 @@
+h1.page-header = params[:action] == "index" || params[:action] ==  "create" ? "Create My Thought" : "Edit My Thought"
+
+- if flash[:notice]
+  .alert.alert-success = flash[:notice] 
+
+- if @my_thought.errors.any?
+  .alert.alert-danger
+    = "#{pluralize(@my_thought.errors.count, "error")}"
+
+    ul
+      - @my_thought.errors.full_messages.each do |err|
+        li = err
+       
+
+= render "form"
+= render "list"
