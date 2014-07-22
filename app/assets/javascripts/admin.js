@@ -18,4 +18,5 @@
 //= require admin/jscript
 //= require admin/angular.min
 //= require admin/ng-table.min
-//= require_tree .
+//= require admin/ng-table.min
+//= require summernote.min
