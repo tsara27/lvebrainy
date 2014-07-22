@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :home
   end
 
-  scope module: 'admin' do
+  namespace :admin do
     resources :dashboard
     resources :tutorials do
       collection do

@@ -36,4 +36,4 @@ h2.sub-header List of Articles
           td = tart.title
           td = tart.content.truncate(20)
           td = tart.parse_status
-          td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, tutorial_path(tart.id)
+          td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, admin_tutorial_path(tart.id)

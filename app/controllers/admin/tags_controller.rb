@@ -8,7 +8,7 @@ class Admin::TagsController < ApplicationController
   
   def create
 		@tag = Tag.new(tag_params)
-    @tag.save ? (redirect_to tags_path, :notice => "Tag was successfully saved.") : (render :index)
+    @tag.save ? (redirect_to admin_tags_path, :notice => "Tag was successfully saved.") : (render :index)
   end
 
   def edit
@@ -16,7 +16,7 @@ class Admin::TagsController < ApplicationController
   end
 
   def update
-    @tag.update_attributes(tag_params) ? (redirect_to tags_path, notice: 'Tag was successfully updated.') : (render :index)
+    @tag.update_attributes(tag_params) ? (redirect_to admin_tags_path, notice: 'Tag was successfully updated.') : (render :index)
   end
   
   def show
@@ -25,7 +25,7 @@ class Admin::TagsController < ApplicationController
 
   def destroy
     @tag.destroy
-    redirect_to tags_path, :notice => "Tag was successfully removed."
+    redirect_to admin_tags_path, :notice => "Tag was successfully removed."
   end
 
 	def list

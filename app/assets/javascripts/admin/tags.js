@@ -1,5 +1,5 @@
  var app = angular.module('main', ['ngTable']).controller('TableAngular', function($scope, $http, ngTableParams) {
-  $http.get('/tags/the_tags.json').success(function (data) {
+  $http.get('/admin/tags/the_tags.json').success(function (data) {
   $scope.data = data;
   $scope.tableParams = new ngTableParams({
     page: 1,            // show first page
