@@ -1,0 +1,16 @@
+h1.page-header = params[:action] == "index" || params[:action] ==  "create" ? "Create Tag" : "Edit Tag"
+
+- if flash[:notice]
+  .alert.alert-success = flash[:notice] 
+
+- if @tag.errors.any?
+  .alert.alert-danger
+    = "#{pluralize(@tag.errors.count, "error")}"
+
+    ul
+      - @tag.errors.full_messages.each do |err|
+        li = err
+       
+
+= render "form"
+= render "list"

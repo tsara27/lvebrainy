@@ -1,0 +1,16 @@
+h2.sub-header List of Tags
+.table-responsive
+  table.table.table-striped ng-table="tableParams"
+    thead
+      tr
+        th Tag Name
+        th Total Articles
+        th colspan="3" Action
+    
+    tbody
+      tr ng-repeat="tag in $data"
+        td = link_to "{{ tag.tag_name }}", URI.unescape(tag_path("{{ tag.id }}"))
+        td data-title="'Total'" {{ tag.total }}
+        td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, URI.unescape(edit_tag_path("{{ tag.id }}"))
+        td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, URI.unescape(tag_path("{{ tag.id }}")), method: :delete, data: { confirm: 'Are you sure?' }
+        td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, URI.unescape(tag_path("{{ tag.id }}"))

@@ -1,0 +1,39 @@
+h2.sub-header Tag Details
+.table-responsive
+  table.table.table-striped
+    tbody
+      tr
+        td 
+          b Tag Name
+        td = @tag.tag_name
+      tr
+        td 
+          b Total Articles
+        td = @tag.articles.count
+      tr
+        td 
+          b Created At
+        td = @tag.created_at
+      tr
+        td 
+          b Updated At
+        td = @tag.created_at
+hr
+h2.sub-header List of Articles
+.table-responsive
+  table.table.table-striped
+    thead
+      tr
+        th Title
+        th Content
+        th Status
+        th Action
+    
+    tbody
+    - if @tag.articles.size > 0
+      - @tag.articles.each do |tart|
+        tr
+          td = tart.title
+          td = tart.content.truncate(20)
+          td = tart.parse_status
+          td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, tutorial_path(tart.id)
