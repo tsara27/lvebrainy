@@ -17,3 +17,16 @@
 /db/schema.rb
 **/.DS_Store
 /lvebrainy.sublime-workspace
+app/views/.DS_Store
+
+.DS_Store
+
+app/.DS_Store
+
+app/views/admin/.DS_Store
+
+*.sublime-workspace
+
+*.sublime-workspace
+
+lvebrainy.sublime-workspace
