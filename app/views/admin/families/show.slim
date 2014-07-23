@@ -1,0 +1,12 @@
+h1 = @family.title
+.small_caption
+  | created at 
+  = @family.created_at.to_formatted_s(:long_ordinal)
+  |  | last updated at 
+  = @family.updated_at.to_formatted_s(:long_ordinal)
+hr
+= @family.content.html_safe
+hr
+| Tags 
+- @family.tags.each do |t|
+  = link_to t.tag_name+" ", admin_tag_path(t.id), class: "tag"

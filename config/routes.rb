@@ -21,6 +21,12 @@ Rails.application.routes.draw do
         get :list
       end
     end
+
+    resources :families do
+      collection do
+        get :list
+      end
+    end
     
     resources :tags do
       collection do
