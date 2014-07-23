@@ -2,7 +2,14 @@
   ul.nav.nav-sidebar
     li = link_to "Tutorials", admin_tutorials_path
     li = link_to "My Thoughts", admin_my_thoughts_path
-    li  = link_to "Families", admin_families_path
+    li
+      a.collapse href="#" data-toggle="collapse" data-target="#family_dropdown" Family
+      ul.collapse#family_dropdown
+        li = link_to "Parenting", admin_families_path(:article_type => "3")
+        li = link_to "My Kids", admin_families_path(:article_type => "4")
+        li = link_to "Me", admin_families_path(:article_type => "5")
+        li = link_to "My Husband", admin_families_path(:article_type => "6")
+ 	      
     li: a href="#" About Me
     hr
     li = link_to "Tags", admin_tags_path
