@@ -1,2 +1,0 @@
-module Admin::MyThoughtsHelper
-end
