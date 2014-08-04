@@ -1,0 +1,23 @@
+.row.well
+  = form_for @article, url: params[:action] == "index" || params[:action] == "create" ? admin_articles_path(:article_type => params[:article_type]) : admin_article_path(:id => @article.id, :article_type => params[:article_type]), html: {class: "form-horizontal", role: "form"} do |f|
+    .form-group
+      = f.label :title, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :title, class: "form-control", title: "Tooltip on top", placeholder: title_placeholder(params[:at])
+    .form-group
+      = f.label :content, class: "col-sm-2 control-label"
+      .col-sm-10.summernote
+        = f.text_area :content, class: "form-control", title: "Tooltip on top", placeholder: "Lorem Ipsum dolor sit amet", id:"summernote"
+        = f.hidden_field :article_type, value: params[:at]
+    = fields_for :tags do |tag_field|
+      .form-group
+        = tag_field.label :tag_name, "Tags", class: "col-sm-2 control-label"
+        .col-sm-10
+          = tag_field.text_field :tag_name, class: "form-control", title: "Tooltip on top", placeholder: "ruby, rails, article"
+        = f.hidden_field :hid_tags, id: "hid_tags", value: @article.get_tags[0..-3]
+        = f.hidden_field :status, id: "status", value: 0
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.button "Save as Draft", class: "btn btn-default", id: "save_as_draft"
+        |  
+        = f.submit "Publish", class: "btn btn-default"

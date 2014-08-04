@@ -1,14 +1,14 @@
 .col-sm-3.col-md-2.sidebar
   ul.nav.nav-sidebar
-    li = link_to "Tutorials", admin_tutorials_path
-    li = link_to "My Thoughts", admin_my_thoughts_path
+    li = link_to "Tutorials", admin_articles_path(at: "1")
+    li = link_to "My Thoughts", admin_articles_path(at: "2")
     li
       a.collapse href="#" data-toggle="collapse" data-target="#family_dropdown" Family
       ul.collapse#family_dropdown
-        li = link_to "Parenting", admin_families_path(:article_type => "3")
-        li = link_to "My Kids", admin_families_path(:article_type => "4")
-        li = link_to "Me", admin_families_path(:article_type => "5")
-        li = link_to "My Husband", admin_families_path(:article_type => "6")
+        li = link_to "Parenting", admin_articles_path(at: "3")
+        li = link_to "My Kids", admin_articles_path(at: "4")
+        li = link_to "Me", admin_articles_path(at: "5")
+        li = link_to "My Husband", admin_articles_path(at: "6")
  	      
     li: a href="#" About Me
     hr

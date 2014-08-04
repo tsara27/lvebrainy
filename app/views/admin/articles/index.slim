@@ -1,0 +1,15 @@
+h1.page-header = params[:action] == "index" || params[:action] ==  "create" ? "Create A Post on #{title_type_based(params[:at])}" : "Edit A Post on Families"
+
+- if flash[:notice]
+  .alert.alert-success = flash[:notice] 
+
+- if @article.errors.any?
+  .alert.alert-danger
+    = "#{pluralize(@article.errors.count, "error")}"
+
+    ul
+      - @article.errors.full_messages.each do |err|
+        li = err
+
+= render "form"
+= render "list"
