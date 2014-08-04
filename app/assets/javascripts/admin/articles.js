@@ -33,7 +33,8 @@ $(document).ready(function () {
 });
 
  var app = angular.module('main', ['ngTable']).controller('TableAngular', function($scope, $http, ngTableParams) {
-  $http.get('/admin/families/list.json').success(function (data) {
+  at = $("#article_article_type").val();
+  $http.get('/admin/articles/list.json?at='+at).success(function (data) {
   $scope.data = data;
   $scope.tableParams = new ngTableParams({
     page: 1,            // show first page
