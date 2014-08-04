@@ -16,24 +16,6 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :tutorials do
-      collection do
-        get :list
-      end
-    end
-
-    resources :my_thoughts do
-      collection do
-        get :list
-      end
-    end
-
-    resources :families do
-      collection do
-        get :list
-      end
-    end
-    
     resources :tags do
       collection do
         get :list
