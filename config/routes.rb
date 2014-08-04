@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard
+    resources :articles do
+      collection do
+        get :list
+      end
+    end
+    
     resources :tutorials do
       collection do
         get :list
