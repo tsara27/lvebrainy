@@ -23,4 +23,7 @@ class Article < ActiveRecord::Base
 	def get_tags
 		self.tags.map(&:tag_name).join(", ")
 	end
+
+	
+
 end
