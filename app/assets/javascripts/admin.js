@@ -16,7 +16,5 @@
 //= require tooltip
 //= require admin/magicsuggest-min
 //= require admin/jscript
-//= require admin/angular.min
-//= require admin/ng-table.min
-//= require admin/ng-table.min
 //= require summernote.min
+//= require paloma

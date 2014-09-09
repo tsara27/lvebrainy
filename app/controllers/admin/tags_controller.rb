@@ -1,14 +1,16 @@
 class Admin::TagsController < ApplicationController
 	before_action :load_tag, only: [:edit, :update, :destroy, :show]
-  layout "admin_layout"
+  layout :is_xhr_admin?  
+  respond_to :html, :js, only: [:create, :update]
 
 	def index
 		@tag = Tag.new
+    js :admin_tags
 	end
   
   def create
 		@tag = Tag.new(tag_params)
-    @tag.save ? (redirect_to admin_tags_path, :notice => "Tag was successfully saved.") : (render :index)
+    render layout: false
   end
 
   def edit
@@ -38,10 +40,9 @@ class Admin::TagsController < ApplicationController
 	end
 
 	def the_tags
-	  @tag = Tag.includes(:articles)
+	  @tags = Tag.includes(:articles)
     respond_to do |format|
-      format.html
-      format.json { render json: @tag.collect {|t| { :tag_name => t.tag_name, :total => t.articles.count, :id => t.id }} }
+      format.html { render partial: "list", layout: false }
     end
 	end
 

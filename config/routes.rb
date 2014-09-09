@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         get :list
       end
     end
-    
+    resources :tutorial_articles
     resources :tags do
       collection do
         get :list

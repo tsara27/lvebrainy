@@ -8,6 +8,7 @@ $(document).ready(function () {
   else{
   vls = $('#hid_tags').val().split(",");
   }
+
   $('#tags_tag_name').magicSuggest({
     value: vls,
     allowFreeEntries: true,
@@ -29,20 +30,14 @@ $(document).ready(function () {
       ['misc', ['codeview']]
     ]
   });
-
-});
-
- var app = angular.module('main', ['ngTable']).controller('TableAngular', function($scope, $http, ngTableParams) {
-  at = $("#article_article_type").val();
-  $http.get('/admin/articles/list.json?at='+at).success(function (data) {
-  $scope.data = data;
-  $scope.tableParams = new ngTableParams({
-    page: 1,            // show first page
-    count: 10           // count per page
-    }, {
-    total: $scope.data.length, // length of data
-    getData: function($defer, params) {
-        $defer.resolve($scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-    }});
+  $('form#new_article')
+    .on('ajax:success', function(xhr, data, status){
+      console.log(status);
+      $("form#new_article")[0].reset();
+    })
+    .on("ajax:error", function(xhr, status, error) {
+      $("#notice").html("<div class='alert alert-success alert-dismissable'><button area-hidden='true' class='close' data-dismiss='alert' data-original-title='' title=''>×</button>Salah</div>");
+      console.log(status);
+      alert(error);
   });
 });

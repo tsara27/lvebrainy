@@ -1,6 +1,8 @@
 class Admin::ArticlesController < ApplicationController
 	before_action :load_articles, only: [:edit, :update, :destroy, :show]
-  layout "admin_layout"
+  layout :is_xhr_admin?
+  respond_to :html, :js, only: [:create, :update]
+  
   def index
   	@article = Article.new
     @article.tags.build
@@ -12,8 +14,8 @@ class Admin::ArticlesController < ApplicationController
 
   def create
     @article = Article.new(tuts_params)
-    @article.adding_tags(params[:tags][:tag_name], "0") if params[:tags] && params[:tags][:tag_name]
-    @article.save ? (redirect_to admin_articles_path(:article_type => params[:at]), :notice => "Article was successfully saved.") : (render :index)
+    new_tags if params[:tags] && params[:tags][:tag_name]
+    flash[:notice] = "Article was successfully saved." if @article.save
   end
 
   def edit
@@ -22,7 +24,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def update
-    params[:tags] && params[:tags][:tag_name] ? @article.adding_tags(params[:tags][:tag_name], "1") : @article.adding_tags(nil, "1")
+    params[:tags] && params[:tags][:tag_name] ? new_tags : zero_tags
     @article.update_attributes(tuts_params) ? (redirect_to admin_articles_path(:article_type => params[:at]), notice: 'Article was successfully updated.') : (render :index)
   end
 
@@ -46,5 +48,13 @@ private
 
   def load_articles
     @article = Article.includes(:tags).find(params[:id])
+  end
+
+  def new_tags
+    @article.adding_tags(params[:tags][:tag_name], "1")
+  end
+
+  def zero_tags
+    @article.adding_tags(nil, "1")
   end
 end

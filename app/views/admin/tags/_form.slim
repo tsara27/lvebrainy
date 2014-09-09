@@ -1,5 +1,5 @@
 .row.well
-  = form_for @tag, url: params[:action] == "index" || params[:action] == "create" ? admin_tags_path : admin_tag_path(@tag), html: {class: "form-horizontal", role: "form"} do |f|
+  = form_for @tag, url: params[:action] == "index" || params[:action] == "create" ? admin_tags_path : admin_tag_path(@tag), html: {class: "form-horizontal", role: "form", remote: "true"} do |f|
     .form-group
       = f.label :tag_name, class: "col-sm-2 control-label"
       .col-sm-10

@@ -1,5 +1,5 @@
 .row.well
-  = form_for @article, url: params[:action] == "index" || params[:action] == "create" ? admin_articles_path(:article_type => params[:article_type]) : admin_article_path(:id => @article.id, :article_type => params[:article_type]), html: {class: "form-horizontal", role: "form"} do |f|
+  = form_for @article, url: params[:action] == "index" || params[:action] == "create" ? admin_articles_path(:article_type => params[:article_type]) : admin_article_path(:id => @article.id, :article_type => params[:article_type]), html: {class: "form-horizontal", role: "form"}, remote: true do |f|
     .form-group
       = f.label :title, class: "col-sm-2 control-label"
       .col-sm-10
@@ -18,6 +18,6 @@
         = f.hidden_field :status, id: "status", value: 0
     .form-group
       .col-sm-offset-2.col-sm-10
-        = f.button "Save as Draft", class: "btn btn-default", id: "save_as_draft"
+        = f.button "Save as Draft", class: "btn btn-default", id: "save_as_draft", "data-disable-with" => "Save as Draft"
         |  
-        = f.submit "Publish", class: "btn btn-default"
+        = f.submit "Publish", class: "btn btn-default", id: "submit", "data-disable-with" => "Publish"
