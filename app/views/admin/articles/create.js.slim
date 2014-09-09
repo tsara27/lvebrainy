@@ -1,0 +1,6 @@
+<% if @article.errors.any? %>
+  $("#notice").html("<div class='alert alert-success alert-dismissable'><button area-hidden='true' class='close' data-dismiss='alert' data-original-title='' title=''>×</button>sukses</div>");
+<% else %>
+  $("#notice").html("<div class='alert alert-success alert-dismissable'><button area-hidden='true' class='close' data-dismiss='alert' data-original-title='' title=''>×</button>Salah</div>");
+<% end %>
+
