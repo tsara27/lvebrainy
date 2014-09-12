@@ -1,8 +1,8 @@
 h1.page-header = params[:action] == "index" || params[:action] ==  "create" ? "Create Tag" : "Edit Tag"
 
-- if flash[:notice]
-  .alert.alert-success = flash[:notice] 
+#notice
 
+#alert
 - if @tag.errors.any?
   .alert.alert-danger
     = "#{pluralize(@tag.errors.count, "error")}"
