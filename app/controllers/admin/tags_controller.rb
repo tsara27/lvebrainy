@@ -1,16 +1,16 @@
 class Admin::TagsController < ApplicationController
 	before_action :load_tag, only: [:edit, :update, :destroy, :show]
   layout :is_xhr_admin?  
-  respond_to :html, :js, only: [:create, :update]
+  respond_to :html, :js, only: [:create, :update, :the_tags]
+  js false, except: [:index]
 
 	def index
 		@tag = Tag.new
-    js :admin_tags
+    js "Admin/Tags#index", page: params[:page]
 	end
   
   def create
 		@tag = Tag.new(tag_params)
-    render layout: false
   end
 
   def edit
@@ -40,11 +40,8 @@ class Admin::TagsController < ApplicationController
 	end
 
 	def the_tags
-	  @tags = Tag.includes(:articles)
-    respond_to do |format|
-      format.html { render partial: "list", layout: false }
-    end
-	end
+	  @tags = Tag.includes(:articles).page params[:page]
+  end
 
 	private
   def tag_params 
