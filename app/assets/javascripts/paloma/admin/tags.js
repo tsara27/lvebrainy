@@ -1,4 +1,17 @@
-var AdminTagsController = Paloma.controller('Tags');
-AdminTagsController.prototype.index = function(){
-   alert('Hello Sexy User!' );
+function parseTags(){
+ $.ajax({
+    url: "/admin/tags/the_tags",
+    type: "GET",
+    success: function(html) {
+      $("#tags_data").html(html);
+    },
+    error: function( xhr, status, errorThrown ) {
+      alert( "Sorry, there was a problem!" );
+    }
+  });
+}
+
+var TagsController = Paloma.controller('Admin/Tags');
+TagsController.prototype.index = function(){
+  parseTags(this.params['page']);
 };
