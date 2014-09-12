@@ -6,15 +6,9 @@ html
     == javascript_include_tag 'admin', params[:controller]
     == csrf_meta_tags 
 
-  body ng-app="main"
+  body
     = render partial: "layouts/admin/navigation"
-	.container-fluid ng-controller="TableAngular"
+	.container-fluid
       .row
 	    = render partial: "layouts/admin/sidebar"
-	    = render partial: "layouts/admin/content"
-        
-
-
-
-
-  
+	    = render partial: "layouts/admin/content"  
