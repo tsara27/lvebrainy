@@ -1,7 +1,7 @@
 class Admin::TagsController < ApplicationController
 	before_action :load_tag, only: [:edit, :update, :destroy, :show]
   layout :is_xhr_admin?  
-  respond_to :html, :js, only: [:create, :update, :the_tags]
+  respond_to :html, :js, only: [:create, :update, :destroy, :the_tags]
   js false, except: [:index, :edit]
 
 	def index
@@ -28,7 +28,6 @@ class Admin::TagsController < ApplicationController
 
   def destroy
     @tag.destroy
-    redirect_to admin_tags_path, :notice => "Tag was successfully removed."
   end
 
 	def list
