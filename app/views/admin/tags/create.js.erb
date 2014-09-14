@@ -1,0 +1,7 @@
+<% if @tag.save %>
+  $("#notice").html("<div class='alert alert-success alert-dismissable'><button class='close' data-dismiss='alert' area-hidden='true'>&times;</button>Tag was successfully saved.");
+  $("#tag_form")[0].reset();
+  $("#table_body").prepend("<tr><%= escape_javascript("<td>#{link_to @tag.tag_name, admin_tag_path(@tag.id)}</td><td>#{@tag.articles.count}</td><td>#{link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_admin_tag_path(@tag)}</td><td>#{ link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_tag_path(@tag), method: :delete, data: { confirm: 'Are you sure?' }}</td><td>#{ link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, admin_tag_path(@tag) }</td>".html_safe) %></tr>");
+<% else %>
+  $("#notice").html("<div class='alert alert-danger alert-dismissable'><button class='close' data-dismiss='alert' area-hidden='true'>&times;</button><%= pluralize(@tag.errors.count, 'error') %><ul><% @tag.errors.full_messages.each do |err| %><li><%= escape_javascript(err) %></li><% end %></ul></div>");
+<% end %>

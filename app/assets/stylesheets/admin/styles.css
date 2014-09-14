@@ -13,5 +13,10 @@
  *= require_self
  *= require fonts
  *= require admin/bootstrap.min
+ *= require font-awesome.min
  *= require admin/dashboard
+ *= require admin/magicsuggest-min
+ *= require admin/additional
+ *= require summernote
+ *= require_tree .
  */

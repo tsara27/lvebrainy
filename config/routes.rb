@@ -8,9 +8,20 @@ Rails.application.routes.draw do
     resources :home
   end
 
-  scope module: 'admin' do
+  namespace :admin do
     resources :dashboard
-    resources :tutorials
+    resources :articles do
+      collection do
+        get :list
+      end
+    end
+    resources :tutorial_articles
+    resources :tags do
+      collection do
+        get :list
+        get :the_tags
+      end
+    end
   end
 
   # Example of regular route:
