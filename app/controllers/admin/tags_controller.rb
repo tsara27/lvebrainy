@@ -2,11 +2,11 @@ class Admin::TagsController < ApplicationController
 	before_action :load_tag, only: [:edit, :update, :destroy, :show]
   layout :is_xhr_admin?  
   respond_to :html, :js, only: [:create, :update, :the_tags]
-  js false, except: [:index]
+  js false, except: [:index, :edit]
 
 	def index
 		@tag = Tag.new
-    js "Admin/Tags#index", page: params[:page]
+    js "Admin/Tags#load_data", page: params[:page]
 	end
   
   def create
@@ -15,10 +15,11 @@ class Admin::TagsController < ApplicationController
 
   def edit
     render :index
+    js "Admin/Tags#load_data", page: params[:page]
   end
 
   def update
-    @tag.update_attributes(tag_params) ? (redirect_to admin_tags_path, notice: 'Tag was successfully updated.') : (render :index)
+    @tag.update_attributes(tag_params)
   end
   
   def show
