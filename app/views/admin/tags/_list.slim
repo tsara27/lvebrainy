@@ -9,11 +9,11 @@ h2.sub-header List of Tags
     
     tbody#table_body
       - @tags.each_with_index do |tag, index|
-        tr
+        tr id="tag_#{tag.id}"
           td = link_to tag.tag_name, admin_tag_path(tag.id)
           td = tag.articles.count
           td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_admin_tag_path(tag) 
-          td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_tag_path(tag), method: :delete, data: { confirm: 'Are you sure?' }
+          td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_tag_path(tag), method: :delete, data: { confirm: 'Are you sure?', remote: true}
           td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, admin_tag_path(tag)
 
 #paginator
