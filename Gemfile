@@ -14,9 +14,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'slim'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # The scoped_search Rails plugin makes it easy to search your ActiveRecord models. Searching is performed using a query string, which should be passed to the named_scope search_for. Based on a definition in what fields to look, it will build query conditions and return those as a named scope.
 gem "scoped_search"
+# Controller and method has its own js
 gem "paloma"
+# Kaminari with bootstrap views
+gem 'kaminari-bootstrap', '~> 3.0.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
