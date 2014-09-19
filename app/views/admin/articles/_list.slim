@@ -17,7 +17,7 @@ h2.sub-header = "Posts in #{title_type_based(params[:article_type])}"
           td = article.get_tags
           td = article.parse_status
           td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_admin_article_path(id: article.id, at: params[:article_type])
-          td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_article_path(id: article.id, at: params[:at]), method: :delete, data: { confirm: 'Are you sure?' }
+          td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_article_path(id: article.id, at: params[:at]), method: :delete, data: { confirm: 'Are you sure?', remote: true }
           td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, admin_article_path(id: article.id, at: params[:at])
 
 #paginator
