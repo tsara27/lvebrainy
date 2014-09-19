@@ -1,12 +1,12 @@
 class Admin::TagsController < ApplicationController
 	before_action :load_tag, only: [:edit, :update, :destroy, :show]
+  before_action :paloma_load, only: [:index, :edit]
   layout :is_xhr_admin?  
   respond_to :html, :js, only: [:create, :update, :destroy, :the_tags]
   js false, except: [:index, :edit]
 
 	def index
 		@tag = Tag.new
-    js "Admin/Tags#load_data", page: params[:page]
 	end
   
   def create
@@ -15,7 +15,6 @@ class Admin::TagsController < ApplicationController
 
   def edit
     render :index
-    js "Admin/Tags#load_data", page: params[:page]
   end
 
   def update
@@ -50,5 +49,9 @@ class Admin::TagsController < ApplicationController
   
   def load_tag
     @tag = Tag.includes(:articles).find(params[:id])
+  end
+
+  def paloma_load
+    js "Admin/Tags#load_data"
   end
 end

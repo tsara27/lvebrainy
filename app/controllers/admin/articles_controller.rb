@@ -1,7 +1,9 @@
 class Admin::ArticlesController < ApplicationController
-	before_action :load_articles, only: [:edit, :update, :destroy, :show]
+	before_action :load_article, only: [:edit, :update, :destroy, :show]
+  before_action :paloma_load, only: [:index, :edit]
   layout :is_xhr_admin?
-  respond_to :html, :js, only: [:create, :update]
+  respond_to :html, :js, only: [:create, :update, :destroy, :the_articles]
+  js false, except: [:index, :edit]
   
   def index
   	@article = Article.new
@@ -25,12 +27,11 @@ class Admin::ArticlesController < ApplicationController
 
   def update
     params[:tags] && params[:tags][:tag_name] ? new_tags : zero_tags
-    @article.update_attributes(tuts_params) ? (redirect_to admin_articles_path(:article_type => params[:at]), notice: 'Article was successfully updated.') : (render :index)
+    @saved = @article.update_attributes(tuts_params) ? 1 : 0
   end
 
   def destroy
     @article.destroy
-    redirect_to admin_articles_path(:article_type => params[:at]), :notice => "Article was successfully removed."
   end
 
   def list
@@ -40,13 +41,17 @@ class Admin::ArticlesController < ApplicationController
       format.json { render json: @article.collect {|t| { :title => t.title, :content => t.content.truncate(20), :tags => t.get_tags, :status => t.parse_status, :id => t.id }} }
     end
   end
+  
+  def the_articles
+    @articles = Article.includes(:tags).where("article_type = ?", params[:article_type]).page params[:page]
+  end
 
 private
   def tuts_params 
     params.require(:article).permit(:title, :content, :article_type,:status)
   end
 
-  def load_articles
+  def load_article
     @article = Article.includes(:tags).find(params[:id])
   end
 
@@ -56,5 +61,9 @@ private
 
   def zero_tags
     @article.adding_tags(nil, "1")
+  end
+
+  def paloma_load
+    js "Admin/Articles#load_data", at: params[:at]
   end
 end

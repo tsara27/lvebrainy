@@ -1,0 +1,9 @@
+<% if @saved == 1 %>
+  $("#notice").html("<div class='alert alert-success alert-dismissable'><button class='close' data-dismiss='alert' area-hidden='true'>&times;</button>Article <%= @article.title %> was successfully updated.");
+  $("#article_<%= @article.id %>").remove();
+  $("#table_body").prepend("<tr id='article_<%= @article.id %>'><%= escape_javascript("<td>#{@article.title}</td><td>#{@article.content.truncate(20)}</td><td>#{@article.get_tags}</td><td>#{@article.parse_status}</td><td>#{ link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_admin_article_path(id: @article.id, at: params[:article_type]) }</td><td>#{ link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_article_path(id: @article.id, at: params[:at]), method: :delete, data: { confirm: 'Are you sure?', remote: true } }</td><td>#{ link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, admin_article_path(id: @article.id, at: params[:at])
+ }</td>".html_safe) %></tr>");
+  $("#article_form")[0].reset();
+<% else %>
+  $("#notice").html("<div class='alert alert-danger alert-dismissable'><button class='close' data-dismiss='alert' area-hidden='true'>&times;</button><%= pluralize(@article.errors.count, 'error') %><ul><% @article.errors.full_messages.each do |err| %><li><%= escape_javascript(err) %></li><% end %></ul></div>");
+<% end %>
