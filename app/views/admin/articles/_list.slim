@@ -1,7 +1,7 @@
-h2.sub-header = "Posts in #{title_type_based(params[:at])}"
+h2.sub-header = "Posts in #{title_type_based(params[:article_type])}"
 .table-responsive
-  table.table.table-striped ng-table="tableParams"
-    thead
+  table.table.table-striped
+    thead#table_header
       tr
         th Title
         th Content
@@ -9,12 +9,16 @@ h2.sub-header = "Posts in #{title_type_based(params[:at])}"
         th Status
         th colspan="3" Action
     
-    tbody
-      tr ng-repeat="article in $data"
-        td data-title="'Title'" {{ article.title }}
-        td data-title="'Content'" {{ article.content }}
-        td data-title="'Tags'" {{ article.tags }}
-        td data-title="'Status'" {{ article.status }}
-        td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, URI.unescape(edit_admin_article_path(id: "{{ article.id }}", at: params[:at]))
-        td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, URI.unescape(admin_article_path(id: "{{ article.id }}", at: params[:at])), method: :delete, data: { confirm: 'Are you sure?' }
-        td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, URI.unescape(admin_article_path(id: "{{ article.id }}", at: params[:at]))
+    tbody#table_body
+      - @articles.each_with_index do |article, index|
+        tr id="article_#{article.id}"
+          td = article.title
+          td = article.content.truncate(20)
+          td = article.get_tags
+          td = article.parse_status
+          td = link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_admin_article_path(id: article.id, at: params[:article_type])
+          td = link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, admin_article_path(id: article.id, at: params[:at]), method: :delete, data: { confirm: 'Are you sure?' }
+          td = link_to '<span class="glyphicon glyphicon-eye-open"></span>'.html_safe, admin_article_path(id: article.id, at: params[:at])
+
+#paginator
+  = paginate @articles, remote: true
