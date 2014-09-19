@@ -13,5 +13,5 @@ function parseTags(){
 
 var TagsController = Paloma.controller('Admin/Tags');
 TagsController.prototype.load_data = function(){
-  parseTags(this.params['page']);
+  parseTags();
 };
