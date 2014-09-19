@@ -1,5 +1,5 @@
 .row.well
-  = form_for @article, url: params[:action] == "index" || params[:action] == "create" ? admin_articles_path(:article_type => params[:article_type]) : admin_article_path(:id => @article.id, :article_type => params[:article_type]), html: {class: "form-horizontal", role: "form"}, remote: true do |f|
+  = form_for @article, url: params[:action] == "index" || params[:action] == "create" ? admin_articles_path(:article_type => params[:article_type]) : admin_article_path(:id => @article.id, :article_type => params[:article_type]), html: {class: "form-horizontal", role: "form", id: "article_form"}, remote: true do |f|
     .form-group
       = f.label :title, class: "col-sm-2 control-label"
       .col-sm-10
