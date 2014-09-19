@@ -32,7 +32,6 @@ class Admin::ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to admin_articles_path(:article_type => params[:at]), :notice => "Article was successfully removed."
   end
 
   def list
