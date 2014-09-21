@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
 
 	def adding_tags(tags,conf)
   	self.tags.destroy_all if conf == "1"
-  	if tags.size > 0
+  	unless tags.nil?
   		tags.each do |the_tag|
 			  check_tag = Tag.where(:tag_name => the_tag.downcase.delete(",").delete(" "))
 			  check_tag.blank? ? self.tags.build({:tag_name => the_tag.downcase.delete(",").delete(" ")}) : self.tags << check_tag
