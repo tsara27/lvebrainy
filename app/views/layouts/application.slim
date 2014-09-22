@@ -7,5 +7,9 @@ html
     == csrf_meta_tags 
 
   body
-    = render partial: "layouts/public/navigation"
-    = render partial: "layouts/public/content" 
+  .container-fluid
+    .row
+      = render "layouts/public/sidebar"
+	    
+      = render "layouts/public/content"
+
