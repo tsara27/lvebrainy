@@ -1,0 +1,8 @@
+toolbar:
+  - bold italic underline strikethrough | undo redo | subscript superscript | bullist numlist | image | link | code | alignleft aligncenter alignright alignjustify | styleselect | removeformat
+plugins:
+  - image
+  - link
+  - code
+  - wordcount
+menubar: false
