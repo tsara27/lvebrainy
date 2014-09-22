@@ -15,6 +15,7 @@ gem 'slim'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'tinymce-rails'
 # The scoped_search Rails plugin makes it easy to search your ActiveRecord models. Searching is performed using a query string, which should be passed to the named_scope search_for. Based on a definition in what fields to look, it will build query conditions and return those as a named scope.
 gem "scoped_search"
 # Controller and method has its own js
