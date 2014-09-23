@@ -16,20 +16,6 @@ $(document).ready(function () {
     method: 'get',
     data: '/admin/tags/list.json'
   });
-  $('#summernote').summernote({
-  	height: 300,   //set editable area's height
-    codemirror: { // codemirror options
-      theme: 'monokai'
-    },
-    toolbar: [
-      ['style', ['bold', 'italic', 'underline', 'clear', 'style']],
-      ['fontsize', ['fontsize']],
-      ['color', ['color']],
-      ['para', ['ul', 'ol', 'paragraph']],
-      ['insert',['link']],
-      ['misc', ['codeview']]
-    ]
-  });
   $('form#new_article')
     .on('ajax:success', function(xhr, data, status){
       console.log(status);

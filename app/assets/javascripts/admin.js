@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tinymce-jquery
 //= require jquery-ui/effect-highlight
 //= require bootstrap.min
 //= require tooltip
 //= require admin/magicsuggest-min
 //= require admin/jscript
-//= require summernote.min
 //= require paloma
 //= require_tree ./paloma
